@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h1>Connexion</h1>
     <form action="controllers/LoginController.php" method="post">
 
         <label for="email">Email :</label>
@@ -16,7 +17,7 @@
         <label for="password">Mot de passe :</label>
         <input type="password" id="password" name="password" minlength="6" required><br>
 
-        <input type="submit" value="Ajouter">
+        <input type="submit" value="Se connecter">
     </form>
 </body>
 
