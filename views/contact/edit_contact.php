@@ -21,7 +21,7 @@
             <input type="email" id="email" name="email" value="<?php echo $contact['email']; ?>" required><br>
 
             <label for="tel">Téléphone :</label>
-            <input type="tel" id="tel" name="tel" value="<?php echo $contact['tel']; ?>" required><br>
+            <input type="tel" id="tel" name="tel" value="<?php echo $contact['tel']; ?>"  pattern="0\d{9}" required><br>
 
             <input type="submit" value="Modifier">
         </form>

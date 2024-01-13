@@ -10,7 +10,7 @@
     <a href="../../controllers/contact/ListContactController.php">Retour à la liste des contacts</a>
 
 
-        <p>Voulez-vous vraiment supprimer ce contact ? <?php echo $_GET["id"]; ?> : <?php echo $_GET["nom"]; ?> ?</p>
+        <p>Voulez-vous vraiment supprimer le contact n°<?php echo $_GET["id"]; ?> : <?php echo $_GET["nom"]; ?> <?php echo $_GET["prenom"]; ?> ?</p>
         <form action="../../controllers/contact/DeleteContactController.php?id=<?php echo $_GET["id"]; ?>" method="post">
             <input type="submit" value="Oui, Supprimer">
         </form>

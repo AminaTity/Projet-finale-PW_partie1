@@ -8,12 +8,15 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <a href="../../index.php">Licenciés</a>
-        <a href="../categorie/ListCategorieController.php">Catégories</a>
-        <a class="active" href="#contact">Contact</a>
-        <a href="../educateur/ListEducateurController.php">Éducateurs</a>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="../licencie/ListLicencieController.php">Licencié</a></li>
+            <li><a href="../educateur/ListEducateurController.php">Éducateur</a></li>
+            <li><a href="../categorie/ListCategorieController.php">Catégorie</a></li>
+            <li><a href="#" class="active">Contact</a></li>
+            <li style="float:right"><a href="../LogoutController.php">Déconnecter <?php echo $_SESSION['email']; ?></a></li>
+        </ul>
+    </nav>
     <h1>Liste des contacts</h1>
     <a href="../../views/contact/add_contact.php">Ajouter un contact</a><br>
     <?php
@@ -42,7 +45,7 @@
                         <td><?php echo $row['tel']; ?></td>
                         <td>
                             <a href="EditContactController.php?id=<?php echo $row['id']; ?>">Modifier</a>
-                            <a href="../../views/contact/delete_contact.php?id=<?php echo $row['id']; ?>&nom=<?php echo $row['nom']; ?>">Supprimer</a>
+                            <a href="../../views/contact/delete_contact.php?id=<?php echo $row['id']; ?>&nom=<?php echo $row['nom']; ?>&prenom=<?php echo $row['prenom']; ?>">Supprimer</a>
                         </td>
                     </tr>
                 <?php

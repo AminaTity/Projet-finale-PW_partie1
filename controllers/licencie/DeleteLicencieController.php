@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!$_SESSION['email']) {
+    header('Location: ../../index.php');
+    exit();
+}
 require("../../config/config.php");
 require("../../classes/dao/LicencieDAO.php");
 require("../../classes/models/LicencieModel.php");
@@ -14,7 +19,7 @@ class DeleteLicencieController
     public function deleteLicencie($licencieId)
     {
         $this->licencieDAO->deleteById($licencieId);
-        header('Location: ../../index.php');
+        header('Location: ListLicencieController.php');
         exit();
     }
 }

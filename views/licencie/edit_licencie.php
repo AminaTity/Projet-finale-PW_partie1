@@ -9,7 +9,7 @@
 
 <body>
     <h1>Modifier un licencié</h1>
-    <a href="../../index.php">Retour à la liste des licenciés</a>
+    <a href="ListLicencieController.php">Retour à la liste des licenciés</a>
 
 
     <form action="../../controllers/licencie/EditLicencieController.php?id=<?php echo $_GET['id']; ?>" method="post">

@@ -59,5 +59,14 @@ class EducateurDAO {
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
+
+    // Méthode pour récupérer l'éducateur à partir de l'email
+    public function getByEmail($email) {
+        $sql = "select * from educateur where email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 }
 ?>

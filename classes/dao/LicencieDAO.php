@@ -51,7 +51,6 @@ class LicencieDAO {
         $stmt->bindParam(':contact', $contact);
         $stmt->bindParam(':categorie', $categorie);
         $stmt->execute();
-       
     }
 
     // Méthode pour supprimer un licencié par son ID
@@ -60,6 +59,12 @@ class LicencieDAO {
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
+    }
+
+    // Méthode pour séléctionner un licencié qui n'est pas éducateur
+    public function getNonEducateur() {
+        $sql = "select * from licencie where id not in (select licencie_id from educateur)";
+        return $this->pdo->query($sql);
     }
 }
 ?>

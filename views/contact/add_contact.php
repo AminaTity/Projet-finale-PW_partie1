@@ -20,7 +20,7 @@
         <input type="email" id="email" name="email" required><br>
 
         <label for="tel">Téléphone :</label>
-        <input type="tel" id="tel" name="tel" required><br>
+        <input type="tel" id="tel" name="tel" pattern="0\d{9}" required><br>
 
         <input type="submit" value="Ajouter">
     </form>

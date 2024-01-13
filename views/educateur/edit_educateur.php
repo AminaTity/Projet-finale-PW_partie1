@@ -31,12 +31,12 @@
         <label for="roles">Rôle :</label>
         <select name="roles" id="roles" multiple size="3" required>
             <option value='<?php echo $educateur['roles']; ?>' selected>--Please choose an option--</option>
-            <option value='{"0" : "ROLE_USER"}'>ROLE_USER</option>
-            <option value='{"1" : "ROLE_ADMIN"}'>ROLE_ADMIN</option>
+            <option value='["ROLE_USER"]'>ROLE_USER</option>
+            <option value='["ROLE_ADMIN"]'>ROLE_ADMIN</option>
         </select><br>
 
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" value="<?php echo $educateur['password']; ?>" required><br>
+        <input type="password" id="password" name="password" value="<?php echo $_SESSION['password']; ?>" minlength="6" required><br>
 
         <input type="submit" value="Modifier">
     </form>

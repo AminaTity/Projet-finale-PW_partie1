@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!$_SESSION['email']) {
+    header('Location: ../../index.php');
+    exit();
+}
 require("../../config/config.php");
 require("../../classes/dao/ContactDAO.php");
 class ListContactController

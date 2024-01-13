@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!$_SESSION['email']) {
+    header('Location: ../../index.php');
+    exit();
+}
 require("../../config/config.php");
 require("../../classes/dao/EducateurDAO.php");
 require("../../classes/dao/LicencieDAO.php");
@@ -17,7 +22,7 @@ class EditEducateurController
     public function editeducateur($educateurId)
     {
         $educateur = $this->educateurDAO->getById($educateurId);
-        $licencies = $this->licencieDAO->getAll();
+        $licencies = $this->licencieDAO->getNonEducateur();
         include('../../views/educateur/edit_educateur.php');
     }
 
@@ -35,6 +40,7 @@ $EditEducateurController = new EditEducateurController($educateurDAO, $licencieD
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     echo $EditEducateurController->editEducateur($_GET['id']);
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $educateurModel = new EducateurModel($_GET['id'], $_POST["email"], $_POST["password"], $_POST["roles"], $_POST["licencie_id"]);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $educateurModel = new EducateurModel($_GET['id'], $_POST["email"], $password, $_POST["roles"], $_POST["licencie_id"]);
     echo $EditEducateurController->updateEducateur($educateurModel, $_GET['id']);
 }

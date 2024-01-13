@@ -7,10 +7,10 @@
 </head>
 <body>
     <h1>Supprimer un licencié</h1>
-    <a href="../../index.php">Retour à la liste des licenciés</a>
+    <a href="../../controllers/licencie/ListLicencieController.php">Retour à la liste des licenciés</a>
 
 
-        <p>Voulez-vous vraiment supprimer ce licencié ? <?php echo $_GET["id"]; ?> : <?php echo $_GET["nom"]; ?> ?</p>
+        <p>Voulez-vous vraiment supprimer le licencié n°<?php echo $_GET["id"]; ?> : <?php echo $_GET["nom"]; ?> <?php echo $_GET["prenom"]; ?>?</p>
         <form action="../../controllers/licencie/DeleteLicencieController.php?id=<?php echo $_GET["id"]; ?>" method="post">
             <input type="submit" value="Oui, Supprimer">
         </form>

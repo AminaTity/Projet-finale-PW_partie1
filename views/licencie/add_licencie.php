@@ -9,7 +9,7 @@
 
 <body>
     <h1>Ajouter un licencié</h1>
-    <a href="../../index.php">Retour à la liste des licenciés</a>
+    <a href="../../controllers/licencie/ListLicencieController.php">Retour à la liste des licenciés</a>
 
     <form action="../../controllers/licencie/AddLicencieController.php" method="post">
         <label for="nom">Nom :</label>

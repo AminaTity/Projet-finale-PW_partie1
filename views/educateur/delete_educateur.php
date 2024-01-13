@@ -10,7 +10,7 @@
     <a href="../../controllers/educateur/ListEducateurController.php">Retour à la liste des éducateur</a>
 
 
-        <p>Voulez-vous vraiment supprimer l'éducateur n°<?php echo $_GET["id"]; ?> ?</p>
+        <p>Voulez-vous vraiment supprimer l'éducateur n°<?php echo $_GET["id"]; ?> : <?php echo $_GET["email"]; ?> ?</p>
         <form action="../../controllers/educateur/DeleteEducateurController.php?id=<?php echo $_GET["id"]; ?>" method="post">
             <input type="submit" value="Oui, Supprimer">
         </form>
