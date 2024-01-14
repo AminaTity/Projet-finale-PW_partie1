@@ -1,6 +1,9 @@
 <?php
 
-class CategorieModel {
+class CategorieModel
+{
+
+    private $id;
 
     private $code;
 
@@ -8,7 +11,10 @@ class CategorieModel {
 
 
 
-    public function __construct($code, $nom) {
+    public function __construct($id, $code, $nom)
+    {
+
+        $this->id = $id;
 
         $this->code = $code;
 
@@ -16,37 +22,46 @@ class CategorieModel {
     }
 
 
+    public function getId()
+    {
 
-    public function getCode() {
+        return $this->id;
+    }
+
+
+    public function getCode()
+    {
 
         return $this->code;
-
     }
 
 
 
-    public function getNom() {
+    public function getNom()
+    {
 
         return $this->nom;
+    }
 
+
+    public function setId($id)
+    {
+
+        $this->id = $id;
+    }
+
+
+    public function setCode($code)
+    {
+
+        $this->code = $code;
     }
 
 
 
-    public function setCode($code) {
+    public function setNom($nom)
+    {
 
-        $this->code=$code;
-
-    }
-
-
-
-    public function setNom($nom) {
-
-        $this->nom=$nom;
-
+        $this->nom = $nom;
     }
 }
-
-?>
-

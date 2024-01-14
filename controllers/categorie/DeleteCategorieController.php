@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!$_SESSION['email']) {
+    header('Location: ../../index.php');
+    exit();
+}
 require("../../config/config.php");
 require("../../classes/dao/CategorieDAO.php");
 require("../../classes/models/CategorieModel.php");
@@ -11,6 +16,18 @@ class DeleteCategorieController
         $this->categorieDAO = $categorieDAO;
     }
 
+    public function formDeleteCategorie($categorieId)
+    {
+        $categorie = $this->categorieDAO->getById(($categorieId));
+        if ($this->categorieDAO->estUtile($categorieId)) {
+            header('Location: ../../views/categorie/delete_categorie.php?id=' . $categorieId . '&code=' . $categorie['code'] . '&nom=' . $categorie['nom'] . '&alert=1');
+            exit();
+        } else {
+            header('Location: ../../views/categorie/delete_categorie.php?id=' . $categorieId . '&code=' . $categorie['code'] . '&nom=' . $categorie['nom']);
+            exit();
+        }
+    }
+
     public function deleteCategorie($categorieCode)
     {
         $this->categorieDAO->deleteById($categorieCode);
@@ -20,4 +37,9 @@ class DeleteCategorieController
 }
 $categorieDAO = new CategorieDAO($pdo);
 $DeleteCategorieController = new DeleteCategorieController($categorieDAO);
-echo $DeleteCategorieController->deleteCategorie($_GET['code']);
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    echo $DeleteCategorieController->formDeleteCategorie($_GET['id']);
+} else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo $DeleteCategorieController->deleteCategorie($_GET['id']);
+}

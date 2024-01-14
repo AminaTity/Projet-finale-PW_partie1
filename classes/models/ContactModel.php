@@ -1,6 +1,7 @@
 <?php
 
-class ContactModel {
+class ContactModel
+{
 
     private $id;
 
@@ -14,7 +15,8 @@ class ContactModel {
 
 
 
-    public function __construct($id,$nom, $prenom, $email, $tel) {
+    public function __construct($id, $nom, $prenom, $email, $tel)
+    {
 
         $this->id = $id;
 
@@ -25,92 +27,87 @@ class ContactModel {
         $this->email = $email;
 
         $this->tel = $tel;
-
     }
 
 
 
-    public function getId() {
+    public function getId()
+    {
 
         return $this->id;
-
     }
 
 
 
-    public function getNom() {
+    public function getNom()
+    {
 
         return $this->nom;
-
     }
 
 
 
-    public function getPrenom() {
+    public function getPrenom()
+    {
 
         return $this->prenom;
-
     }
 
 
 
-    public function getEmail() {
+    public function getEmail()
+    {
 
         return $this->email;
-
     }
 
 
 
-    public function getTel() {
+    public function getTel()
+    {
 
         return $this->tel;
-
-    }
-
-    
-
-    
-
-    public function setId($id) {
-
-        $this->id=$id;
-
     }
 
 
 
-    public function setNom($nom) {
 
-        $this->nom=$nom;
 
+    public function setId($id)
+    {
+
+        $this->id = $id;
     }
 
 
 
-    public function setPrenom($prenom) {
+    public function setNom($nom)
+    {
 
-        $this->prenom=$prenom;
-
+        $this->nom = $nom;
     }
 
 
 
-    public function setEmail($email) {
+    public function setPrenom($prenom)
+    {
 
-        $this->email=$email;
-
+        $this->prenom = $prenom;
     }
 
 
 
-    public function setTel($tel) {
+    public function setEmail($email)
+    {
 
-        $this->tel=$tel;
-
+        $this->email = $email;
     }
 
+
+
+    public function setTel($tel)
+    {
+
+        $this->tel = $tel;
+    }
 }
-
-?>
-

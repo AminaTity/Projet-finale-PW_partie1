@@ -1,6 +1,7 @@
 <?php
 
-class EducateurModel {
+class EducateurModel
+{
 
     private $id;
 
@@ -14,7 +15,8 @@ class EducateurModel {
 
 
 
-    public function __construct($id, $email, $password, $roles, $licencie) {
+    public function __construct($id, $email, $password, $roles, $licencie)
+    {
 
         $this->id = $id;
 
@@ -25,92 +27,87 @@ class EducateurModel {
         $this->roles = $roles;
 
         $this->licencie = $licencie;
-
     }
 
 
 
-    public function getId() {
+    public function getId()
+    {
 
         return $this->id;
-
     }
 
 
 
-    public function getEmail() {
+    public function getEmail()
+    {
 
         return $this->email;
-
     }
 
 
 
-    public function getPassword() {
+    public function getPassword()
+    {
 
         return $this->password;
-
     }
 
 
 
-    public function getRoles() {
+    public function getRoles()
+    {
 
         return $this->roles;
-
     }
 
 
 
-    public function getLicencie() {
+    public function getLicencie()
+    {
 
         return $this->licencie;
-
-    }
-
-    
-
-    
-
-    public function setId($id) {
-
-        $this->id=$id;
-
     }
 
 
 
-    public function setEmail($email) {
 
-        $this->email=$email;
 
+    public function setId($id)
+    {
+
+        $this->id = $id;
     }
 
 
 
-    public function setPassword($password) {
+    public function setEmail($email)
+    {
 
-        $this->password=$password;
-
+        $this->email = $email;
     }
 
 
 
-    public function setRoles($roles) {
+    public function setPassword($password)
+    {
 
-        $this->roles=$roles;
-
+        $this->password = $password;
     }
 
 
 
-    public function setLicencie($licencie) {
+    public function setRoles($roles)
+    {
 
-        $this->licencie=$licencie;
-
+        $this->roles = $roles;
     }
 
+
+
+    public function setLicencie($licencie)
+    {
+
+        $this->licencie = $licencie;
+    }
 }
-
-?>
-

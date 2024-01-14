@@ -1,13 +1,16 @@
 <?php
-class LicencieDAO {
+class LicencieDAO
+{
     private $pdo;
 
-    public function __construct(PDO $pdo) {
+    public function __construct(PDO $pdo)
+    {
         $this->pdo = $pdo;
     }
 
     // Méthode pour insérer un nouveau licencié dans la base de données
-    public function create(LicencieModel $licencie) {
+    public function create(LicencieModel $licencie)
+    {
         $sql = "insert into licencie (nom, prenom, contact_id, categorie_id) values (:nom, :prenom, :contact, :categorie)";
         $stmt = $this->pdo->prepare($sql);
         $nom = $licencie->getNom();
@@ -22,7 +25,8 @@ class LicencieDAO {
     }
 
     // Méthode pour récupérer un licencié par son id
-    public function getById($id) {
+    public function getById($id)
+    {
         $sql = "select * from licencie where id = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
@@ -31,13 +35,15 @@ class LicencieDAO {
     }
 
     // Méthode pour récupérer la liste de tous les licenciés
-    public function getAll() {
+    public function getAll()
+    {
         $sql = "select * from licencie";
         return $this->pdo->query($sql);
     }
 
     // Méthode pour mettre à jour un licencié
-    public function update(LicencieModel $licencie) {
+    public function update(LicencieModel $licencie)
+    {
         $sql = "update licencie set nom = :nom, prenom = :prenom, contact_id = :contact, categorie_id = :categorie where id = :id";
         $stmt = $this->pdo->prepare($sql);
         $id = $licencie->getId();
@@ -51,15 +57,31 @@ class LicencieDAO {
         $stmt->bindParam(':contact', $contact);
         $stmt->bindParam(':categorie', $categorie);
         $stmt->execute();
-       
     }
 
     // Méthode pour supprimer un licencié par son ID
-    public function deleteById($id) {
+    public function deleteById($id)
+    {
         $sql = "delete from licencie where id = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
+
+    // Méthode pour séléctionner un licencié qui n'est pas éducateur
+    public function getNonEducateur()
+    {
+        $sql = "select * from licencie where id not in (select licencie_id from educateur)";
+        return $this->pdo->query($sql);
+    }
+
+    // Méthode pour vérifier si un licencié est éducateur
+    public function estEducateur($id)
+    {
+        $sql = "select * from educateur where licencie_id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 }
-?>

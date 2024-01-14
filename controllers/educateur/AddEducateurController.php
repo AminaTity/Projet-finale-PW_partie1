@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!$_SESSION['email']) {
+    header('Location: ../../index.php');
+    exit();
+}
 require("../../config/config.php");
 require("../../classes/dao/EducateurDAO.php");
 require("../../classes/dao/LicencieDAO.php");
@@ -16,7 +21,7 @@ class AddEducateurController
 
     public function formAddEducateur()
     {
-        $licencies = $this->licencieDAO->getAll();
+        $licencies = $this->licencieDAO->getNonEducateur();
         include('../../views/educateur/add_educateur.php');
     }
 
@@ -35,6 +40,7 @@ $AddEducateurController = new AddEducateurController($educateurDAO, $licencieDAO
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     echo $AddEducateurController->formAddEducateur();
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $educateurModel = new EducateurModel(null, $_POST["email"], $_POST["password"], $_POST["roles"], $_POST["licencie_id"]);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $educateurModel = new EducateurModel(null, $_POST["email"], $password, $_POST["roles"], $_POST["licencie_id"]);
     echo $AddEducateurController->addEducateur($educateurModel);
 }

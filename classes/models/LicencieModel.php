@@ -1,6 +1,7 @@
 <?php
 
-class LicencieModel {
+class LicencieModel
+{
 
     private $id;
 
@@ -14,7 +15,8 @@ class LicencieModel {
 
 
 
-    public function __construct($id ,$nom, $prenom, $contact, $categorie) {
+    public function __construct($id, $nom, $prenom, $contact, $categorie)
+    {
 
         $this->id = $id;
 
@@ -25,92 +27,87 @@ class LicencieModel {
         $this->contact = $contact;
 
         $this->categorie = $categorie;
-
     }
 
 
 
-    public function getId() {
+    public function getId()
+    {
 
         return $this->id;
-
     }
 
 
 
-    public function getNom() {
+    public function getNom()
+    {
 
         return $this->nom;
-
     }
 
 
 
-    public function getPrenom() {
+    public function getPrenom()
+    {
 
         return $this->prenom;
-
     }
 
 
 
-    public function getContact() {
+    public function getContact()
+    {
 
         return $this->contact;
-
     }
 
 
 
-    public function getCategorie() {
+    public function getCategorie()
+    {
 
         return $this->categorie;
-
-    }
-
-    
-
-    
-
-    public function setId($id) {
-
-        $this->id=$id;
-
     }
 
 
 
-    public function setNom($nom) {
 
-        $this->nom=$nom;
 
+    public function setId($id)
+    {
+
+        $this->id = $id;
     }
 
 
 
-    public function setPrenom($prenom) {
+    public function setNom($nom)
+    {
 
-        $this->prenom=$prenom;
-
+        $this->nom = $nom;
     }
 
 
 
-    public function setContact($contact) {
+    public function setPrenom($prenom)
+    {
 
-        $this->contact=$contact;
-
+        $this->prenom = $prenom;
     }
 
 
 
-    public function setCategorie($categorie) {
+    public function setContact($contact)
+    {
 
-        $this->categorie=$categorie;
-
+        $this->contact = $contact;
     }
 
+
+
+    public function setCategorie($categorie)
+    {
+
+        $this->categorie = $categorie;
+    }
 }
-
-?>
-

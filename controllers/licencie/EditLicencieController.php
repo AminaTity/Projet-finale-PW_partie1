@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!$_SESSION['email']) {
+    header('Location: ../../index.php');
+    exit();
+}
 require("../../config/config.php");
 require("../../classes/dao/LicencieDAO.php");
 require("../../classes/dao/CategorieDAO.php");
@@ -28,7 +33,7 @@ class EditLicencieController
     public function updateLicencie($licencieModel, $id)
     {
         $this->licencieDAO->update($licencieModel, $id);
-        header('Location: ../../index.php');
+        header('Location: ListLicencieController.php');
         exit();
     }
 }
