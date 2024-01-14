@@ -40,12 +40,16 @@ $EditEducateurController = new EditEducateurController($educateurDAO, $licencieD
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     echo $EditEducateurController->editEducateur($_GET['id']);
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
     if(empty($_POST['password'])){
         $educateur = $educateurDAO->getPassword($_GET['id']);
         $password = $educateur['password'];
     } else {
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     }
+=======
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
     $educateurModel = new EducateurModel($_GET['id'], $_POST["email"], $password, $_POST["roles"], $_POST["licencie_id"]);
     echo $EditEducateurController->updateEducateur($educateurModel, $_GET['id']);
 }

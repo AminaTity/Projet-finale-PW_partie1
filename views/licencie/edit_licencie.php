@@ -10,8 +10,13 @@
 
 <body>
     <h1>Modifier un licencié</h1>
+<<<<<<< HEAD
     
     <a class="btn btn-primary" href="ListLicencieController.php" role="button">Retour à la liste des licenciés</a>
+=======
+    <a href="ListLicencieController.php">Retour à la liste des licenciés</a>
+
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 
     <form action="../../controllers/licencie/EditLicencieController.php?id=<?php echo $_GET['id']; ?>" method="post">
         <div class="form-group">

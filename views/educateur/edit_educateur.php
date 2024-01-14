@@ -33,6 +33,7 @@
             <input type="email" id="email" name="email" class="form-control" value="<?php echo $educateur['email']; ?>" required>
         </div>
 
+<<<<<<< HEAD
         <div class="form-group">
             <label for="roles">Rôle :</label>
             <select name="roles" id="roles" class="form-control" multiple size="3" required>
@@ -46,6 +47,17 @@
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" class="form-control" minlength="6">
         </div>
+=======
+        <label for="roles">Rôle :</label>
+        <select name="roles" id="roles" multiple size="3" required>
+            <option value='<?php echo $educateur['roles']; ?>' selected>--Please choose an option--</option>
+            <option value='["ROLE_USER"]'>ROLE_USER</option>
+            <option value='["ROLE_ADMIN"]'>ROLE_ADMIN</option>
+        </select><br>
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" value="<?php echo $_SESSION['password']; ?>" minlength="6" required><br>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 
         <button type="submit" class="btn btn-primary">Modifier</button>
     </form>

@@ -44,7 +44,11 @@
                         <td><?php echo $row['roles']; ?></td>
                         <td>
                             <a href="EditEducateurController.php?id=<?php echo $row['id']; ?>">Modifier</a>
+<<<<<<< HEAD
                             <a href="DeleteEducateurController.php?id=<?php echo $row['id']; ?>">Supprimer</a>
+=======
+                            <a href="../../views/educateur/delete_educateur.php?id=<?php echo $row['id']; ?>&email=<?php echo $row['email']; ?>">Supprimer</a>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
                         </td>
                     </tr>
                 <?php

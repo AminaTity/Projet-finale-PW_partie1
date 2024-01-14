@@ -10,9 +10,14 @@
 
 <body>
     <h1>Supprimer un licencié</h1>
+<<<<<<< HEAD
+=======
+    <a href="../../controllers/licencie/ListLicencieController.php">Retour à la liste des licenciés</a>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 
     <a class="btn btn-primary" href="../../controllers/licencie/ListLicencieController.php" role="button">Retour à la liste des licenciés</a>
 
+<<<<<<< HEAD
     <?php
     if (!empty($_GET['alert'])) {
     ?>
@@ -22,6 +27,8 @@
             Veuillez d'abord supprimer son profil éducateur.
         </div>
     <?php } else { ?>
+=======
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
         <p>Voulez-vous vraiment supprimer le licencié n°<?php echo $_GET["id"]; ?> : <?php echo $_GET["nom"]; ?> <?php echo $_GET["prenom"]; ?>?</p>
         <form action="../../controllers/licencie/DeleteLicencieController.php?id=<?php echo $_GET["id"]; ?>" method="post">
             <button type="submit" class="btn btn-danger">Oui, supprimer</button>

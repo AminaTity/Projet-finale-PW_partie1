@@ -29,10 +29,15 @@
             <input type="email" id="email" name="email" class="form-control" required>
         </div>
 
+<<<<<<< HEAD
         <div class="form-group">
             <label for="tel">Téléphone :</label>
             <input type="tel" id="tel" name="tel" class="form-control" pattern="0\d{9}" required>
         </div>
+=======
+        <label for="tel">Téléphone :</label>
+        <input type="tel" id="tel" name="tel" pattern="0\d{9}" required><br>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>

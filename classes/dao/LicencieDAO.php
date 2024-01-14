@@ -69,6 +69,7 @@ class LicencieDAO
     }
 
     // Méthode pour séléctionner un licencié qui n'est pas éducateur
+<<<<<<< HEAD
     public function getNonEducateur()
     {
         $sql = "select * from licencie where id not in (select licencie_id from educateur)";
@@ -84,4 +85,10 @@ class LicencieDAO
         $stmt->execute();
         return $stmt->fetch();
     }
+=======
+    public function getNonEducateur() {
+        $sql = "select * from licencie where id not in (select licencie_id from educateur)";
+        return $this->pdo->query($sql);
+    }
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 }

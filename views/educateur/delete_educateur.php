@@ -13,6 +13,7 @@
 
     <a class="btn btn-primary" href="../../controllers/educateur/ListEducateurController.php" role="button">Retour à la liste des éducateurs</a>
 
+<<<<<<< HEAD
     <?php
     if (!empty($_GET['alert'])) {
     ?>
@@ -22,6 +23,8 @@
             Veuillez demander à un autre admin de vous supprimer.
         </div>
     <?php } else { ?>
+=======
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
         <p>Voulez-vous vraiment supprimer l'éducateur n°<?php echo $_GET["id"]; ?> : <?php echo $_GET["email"]; ?> ?</p>
         <form action="../../controllers/educateur/DeleteEducateurController.php?id=<?php echo $_GET["id"]; ?>" method="post">
             <button type="submit" class="btn btn-danger">Oui, supprimer</button>

@@ -10,8 +10,12 @@
 
 <body>
     <h1>Ajouter un licencié</h1>
+<<<<<<< HEAD
 
     <a class="btn btn-primary" href="../../controllers/licencie/ListLicencieController.php" role="button">Retour à la liste des licenciés</a>
+=======
+    <a href="../../controllers/licencie/ListLicencieController.php">Retour à la liste des licenciés</a>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 
     <form action="../../controllers/licencie/AddLicencieController.php" method="post">
         <div class="form-group">

@@ -67,14 +67,19 @@ class EducateurDAO
     }
 
     // Méthode pour récupérer l'éducateur à partir de l'email
+<<<<<<< HEAD
     public function getByEmail($email)
     {
+=======
+    public function getByEmail($email) {
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
         $sql = "select * from educateur where email = :email";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         return $stmt->fetch();
     }
+<<<<<<< HEAD
 
     // Méthode pour récupérer le mot de passe hashé
     public function getPassword($id)
@@ -85,4 +90,6 @@ class EducateurDAO
         $stmt->execute();
         return $stmt->fetch();
     }
+=======
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 }

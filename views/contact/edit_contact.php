@@ -31,8 +31,12 @@
 
         <div class="form-group">
             <label for="tel">Téléphone :</label>
+<<<<<<< HEAD
             <input type="tel" id="tel" name="tel" class="form-control" value="<?php echo $contact['tel']; ?>" pattern="0\d{9}" required>
         </div>
+=======
+            <input type="tel" id="tel" name="tel" value="<?php echo $contact['tel']; ?>"  pattern="0\d{9}" required><br>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 
         <button type="submit" class="btn btn-primary">Modifier</button>
     </form>

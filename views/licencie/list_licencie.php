@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <title>Liste des licenciés</title>
     <link rel="stylesheet" href="../../css/styles.css">
+<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+=======
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
 </head>
 
 <body>
@@ -19,11 +22,19 @@
         </ul>
     </nav>
     <h1>Liste des licenciés</h1>
+<<<<<<< HEAD
     <a class="btn btn-primary" href="../licencie/AddLicencieController.php" role="button">Ajouter un licencié</a>
     <?php
     if ($row = $licencies->fetch()) {
     ?>
         <table class="table">
+=======
+    <a href="../licencie/AddLicencieController.php">Ajouter un licencié</a><br>
+    <?php
+    if ($row = $licencies->fetch()) {
+    ?>
+        <table>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
             <thead>
                 <tr>
                     <th>ID</th>
@@ -46,7 +57,11 @@
                         <td><?php echo $row['categorie_id']; ?></td>
                         <td>
                             <a href="EditLicencieController.php?id=<?php echo $row['id']; ?>">Modifier</a>
+<<<<<<< HEAD
                             <a href="DeleteLicencieController.php?id=<?php echo $row['id']; ?>">Supprimer</a>
+=======
+                            <a href="../../views/licencie/delete_licencie.php?id=<?php echo $row['id']; ?>&nom=<?php echo $row['nom']; ?>&prenom=<?php echo $row['prenom']; ?>">Supprimer</a>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
                         </td>
                     </tr>
                 <?php

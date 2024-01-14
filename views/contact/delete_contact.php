@@ -13,6 +13,7 @@
 
     <a class="btn btn-primary" href="../../controllers/contact/ListContactController.php" role="button">Retour à la liste des contacts</a>
 
+<<<<<<< HEAD
     <?php
     if (!empty($_GET['alert'])) {
     ?>
@@ -22,6 +23,8 @@
             Ce contact ne doit contenir aucun licencié pour être supprimé.
         </div>
     <?php } else { ?>
+=======
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
         <p>Voulez-vous vraiment supprimer le contact n°<?php echo $_GET["id"]; ?> : <?php echo $_GET["nom"]; ?> <?php echo $_GET["prenom"]; ?> ?</p>
         <form action="../../controllers/contact/DeleteContactController.php?id=<?php echo $_GET["id"]; ?>" method="post">
             <button type="submit" class="btn btn-danger">Oui, supprimer</button>

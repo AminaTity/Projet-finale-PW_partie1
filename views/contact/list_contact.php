@@ -47,7 +47,11 @@
                         <td><?php echo $row['tel']; ?></td>
                         <td>
                             <a href="EditContactController.php?id=<?php echo $row['id']; ?>">Modifier</a>
+<<<<<<< HEAD
                             <a href="DeleteContactController.php?id=<?php echo $row['id']; ?>">Supprimer</a>
+=======
+                            <a href="../../views/contact/delete_contact.php?id=<?php echo $row['id']; ?>&nom=<?php echo $row['nom']; ?>&prenom=<?php echo $row['prenom']; ?>">Supprimer</a>
+>>>>>>> 5a30b199fc4f54f34cc13fc4c41a0d92b91d52cf
                         </td>
                     </tr>
                 <?php
